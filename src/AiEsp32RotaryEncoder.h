@@ -98,8 +98,8 @@ public:
 	ButtonState readButtonState();
 	unsigned long getAcceleration() { return this->rotaryAccelerationCoef; }
 	void setAcceleration(unsigned long acceleration) { this->rotaryAccelerationCoef = acceleration; }
-	bool AiEsp32RotaryEncoder::getDirection() {	return this->reverseDirection; }
-	void AiEsp32RotaryEncoder::setDirection(bool direction) { this->reverseDirection = direction;}
+	bool getDirection() {	return this->reverseDirection; }
+	void setDirection(bool direction) { this->reverseDirection = direction;}
 	void disableAcceleration() { setAcceleration(0); }
 
 	bool isEncoderButtonClicked(unsigned long maximumWaitMilliseconds = 300);
