@@ -34,6 +34,7 @@ void IRAM_ATTR AiEsp32RotaryEncoder::readEncoder_ISR()
 
 		// this->encoder0Pos += ( this->enc_states[( this->old_AB & 0x0f )]);
 		int8_t currentDirection = (this->enc_states[(this->old_AB & 0x0f)]); //-1,0 or 1
+		if (this->reverseDirection) currentDirection = -currentDirection;
 
 		if (currentDirection != 0)
 		{

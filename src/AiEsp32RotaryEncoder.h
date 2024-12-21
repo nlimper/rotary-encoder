@@ -43,6 +43,7 @@ private:
 
 	bool _circleValues = false;
 	bool isEnabled = true;
+	bool reverseDirection = false;
 
 	uint8_t encoderAPin = AIESP32ROTARYENCODER_DEFAULT_A_PIN;
 	uint8_t encoderBPin = AIESP32ROTARYENCODER_DEFAULT_B_PIN;
@@ -97,6 +98,8 @@ public:
 	ButtonState readButtonState();
 	unsigned long getAcceleration() { return this->rotaryAccelerationCoef; }
 	void setAcceleration(unsigned long acceleration) { this->rotaryAccelerationCoef = acceleration; }
+	bool AiEsp32RotaryEncoder::getDirection() {	return this->reverseDirection; }
+	void AiEsp32RotaryEncoder::setDirection(bool direction) { this->reverseDirection = direction;}
 	void disableAcceleration() { setAcceleration(0); }
 
 	bool isEncoderButtonClicked(unsigned long maximumWaitMilliseconds = 300);
